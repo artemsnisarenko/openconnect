@@ -1243,8 +1243,8 @@ void cstp_common_headers(struct openconnect_info *vpninfo, struct oc_text_buf *b
 	buf_append(buf, "X-Transcend-Version: 1\r\n");
 	if (vpninfo->xmlpost)
 		buf_append(buf, "X-Aggregate-Auth: 1\r\n");
-	if (vpninfo->try_http_auth)
-		buf_append(buf, "X-Support-HTTP-Auth: true\r\n");
+//	if (vpninfo->try_http_auth)
+//		buf_append(buf, "X-Support-HTTP-Auth: true\r\n");
 
 	append_mobile_headers(vpninfo, buf);
 }

@@ -2668,6 +2668,11 @@ static int process_auth_form_cb(void *_vpninfo,
 			if (!opt->_value)
 				goto err;
 			empty = 0;
+        } else if (opt->type == OC_FORM_OPT_SSO) {
+            opt->_value = prompt_for_input("Complete SSO process and enter the cookie: ", vpninfo, 1);
+            if (!opt->_value)
+                goto err;
+            empty = 0;
 		} else if (opt->type == OC_FORM_OPT_TOKEN ||
 			   opt->type == OC_FORM_OPT_HIDDEN) {
 			/* Nothing to do here, but if the tokencode is being
